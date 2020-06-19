@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>HACKDOC | DASHBOARD</title>
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/css/dashboard-hospital-style.css">
+        
+</head>
+<body>
+<div>
+    <nav class="navbar  navbar-default  navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="">
+        <img src="/images/hackdoc-logo.jpg" width="30" height="25"></a>
+        <a class="navbar-brand" id="lol" href="">Hack<b>DOC</b></a> 
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarCollapse" class="navbar-collapse justify-content-start collapse in" aria-expanded="true">
+            <ul class="nav navbar-nav">
+                <li class="nav-item"><a href="#about" onclick="document.getElementById('modal-wrapper').style.display='block'" class="nav-link" id="node">About</a></li>
+                <li class="nav-item"><a href="#contact/to/us" class="nav-link" id="node">Contact</a></li>
+        
+                
+            </ul>
+            <ul class="nav navbar-nav navbar-right ml-auto">
+                <li class="nav-item" id="pprofile" ><p id="p01"> <i class="fa fa-user" aria-hidden="true"></i>Welcome to your profile </p></li>
+                <li class="nav-item" style="text-align: center;">
+                    <a  class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1" id="lop" href="/auth/logout" aria-expanded="false" style="text-align: center">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+
+<div id="modal-wrapper" class="modal">
+    <form class="modal-content animate" >
+        <h3 style="color: red;"> Who Are We</h3><br>
+            1. At Hackdoc, we believe there is a better way to have a connection between the Hospitals and Patients.<br> 
+            2. Generally, people lose their loved ones or their condition becomes serious just because of being unaware about the current scenario of hospitals.<br>
+            3. Using this app, they can know about the currently available facilities within the hospital, like availability of ventilators, beds, ICU wards etc.,  around their locality. <br>
+            4. On addition to this, people may also know about the symptoms and cure of the most common diseases. We are curious to help the society through our platform.<br>
+        <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+    </form>
+</div>
+
+
+<div id="modal-wrapper1" class="modal">
+    <form class="modal-content animate" id="m1">
+        <h3 style="color: red;"> Terms and Conditions:</h3>
+        <h4> Welcome to HackDoc!</h4>
+        By accessing this app we assume you accept these terms and conditions.<br>
+        Do not continue to use HackDoc if you do not agree to take all of the terms and conditions stated on this page.<br>
+        You may access HackDoc for your own personal use subjected to restrictions set in these terms and conditions.<br><br>
+        <h4> Hospital must:</h4>
+        ->Be govt. registered. <br>
+        ->Register themselves on our app by providing a valid proof.<br>
+        ->Provide the absolute information about him/herself as well as about the hospital and treatment.<br>
+        ->Update the provided information regulerly.<br><br>
+        <h4>Users should not:</h4>
+        ->Misuse the information from HackDoc.<br>
+        ->Reproduce, duplicate or copy material from HackDoc.<br><br>
+        <h4>Content Liability:</h4>
+        We shall not be hold responsible for any content that appears on the app, as it would be as per provided by the hospital's authorities.<br>
+        As it is related to health, We recommend you to verify the information provided from any of the reliable resource(may be a family doctor or someone else) before recommending to others and also using for their own.<br><br>
+        <h4>Disclaimer:</h4>
+        To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our app, and the use of this app. Nothing in this disclaimer would be:
+        <br>
+        ->responsible for your any personal injury;
+        <br>
+        ->responsible for fraud or fraudulent misrepresentation;
+        <br>
+        As long as the app and the information and services are provided free of charge, we will not be responsible for any loss or damage of any nature.
+        <br><br>
+        <span onclick="document.getElementById('modal-wrapper1').style.display='none'" class="close" title="Close PopUp">&times;</span>
+    </form>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="heading"></div>
+    </div>
+</div>
+
+<div class="container"> 
+    <div class="row">
+        <div class="col-lg-6 col-sm-12" id="rr1" >
+           <div class="container" id="medical-logo"> </div>
+        </div>
+        <div class="col-lg-6 col-sm-12" id="r1">
+            <div class="container" id="gen-info">
+                <p id="p1">General Information <i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+                <form action="/dashboard/update/geninfo"  method="POST" class="formi">
+                <input(type="hidden", name="_method", value="PUT")>
+                <label for="name" class="lebel-name" > <b>Hospital Name : </b></label>
+                <input type="text" id="name"  name="name" value="<%=hospital.name%>" autocomplete="off"><br>
+                <label for="address" class="lebel-name"><b>Address : </b></label>
+                <input type="text" id="address"  name="address" value="<%=hospital.address%>" autocomplete="off"><br>
+                <label for="contact1" class="lebel-name"><b>Contact1 :</b></label>
+                <input type="number" id="contact1"  name="contact1" value="<%=hospital.contact1%>" autocomplete="off"><br>
+                <label for="contact2" class="lebel-name"><b>Contact2 : </b></label>
+                <input type="number" id="contact2"  name="contact2" value="<%=hospital.contact2%>" autocomplete="off"><br>
+                <div  style="text-align: center; padding: 10px 0 20px 0;">
+                <button class="btnn btnn1">Save Changes</button>
+                </div>
+                </form>
+          </div>
+        </div>
+
+    </div>
+</div>
+<div class="container"> 
+    <div class="row">
+        <div class="col-xl-6 col-lg-12" id="r1" >
+           <div class="container" id="gen-info" >
+                <p id="p1">Facilities Available <i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+                <form action="/dashboard/update/facavail"  method="POST">
+                <input(type="hidden", name="_method", value="PUT")>
+                <table>
+                    <tr>
+                        <th>
+                            Facility
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                    </tr>
+                    <%for(let i=0;i<hospital.facility.length;i++){%>
+                        <tr>
+                        <%if(i==0){%>
+                        <td>
+                            ICU
+                        </td>
+                        <%}%>
+                        <%if(i==1){%>
+                            <td>
+                                CT scan
+                            </td>
+                        <%}%>
+                        <%if(i==2){%>
+                            <td>
+                                Pharmacy
+                            </td>
+                        <%}%>
+                        <%if(i==3){%>
+                            <td>
+                                Ambulance
+                            </td>
+                        <%}%>
+                        <%if(i==4){%>
+                            <td>
+                                Blood Bank
+                            </td>
+                        <%}%>
+                        <%if(i%2==0){%>
+                            <td><input autocomplete="off" type="text"  name="fac" id="inp1" value="<%=hospital.facility[i]%>" ></td>
+                        <%}%>
+                        <%if(i%2!=0){%>
+                            <td><input autocomplete="off" type="text"  name="fac" id="inp1" value="<%=hospital.facility[i]%>" style="background-color: #f3f3f3;"></td>
+                        <%}%>
+                        
+                        </tr>
+                    <%}%>
+                </table>
+                <div  style="text-align: center; padding: 10px 0 20px 0;">
+                    <button class="btnn btnn1">Save Changes</button>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-12" id="r1">
+            <div class="container" id="gen-info">
+                <p id="p1">Availability of Doctors <i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+                <form action="/dashboard/update/docavail"  method="POST">
+                    <input(type="hidden", name="_method", value="PUT")>
+                <table>
+                    <tr>
+                        <th>
+                            Department
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                    </tr>
+                    <%for(let i=0;i<hospital.docavail.length;i++){%>
+                        <tr>
+                        <%if(i==0){%>
+                        <td>
+                            Physician
+                        </td>
+                        <%}%>
+                        <%if(i==1){%>
+                            <td>
+                                Neurologist
+                            </td>
+                        <%}%>
+                        <%if(i==2){%>
+                            <td>
+                                Cardiologist
+                            </td>
+                        <%}%>
+                        <%if(i==3){%>
+                            <td>
+                                Skin Infections
+                            </td>
+                        <%}%>
+                        <%if(i==4){%>
+                            <td>
+                                Physiotherapist
+                            </td>
+                        <%}%>
+                        <%if(i%2==0){%>
+                            <td><input autocomplete="off" type="text"  name="doc" id="inp1" value="<%=hospital.docavail[i]%>"></td>
+                        <%}%>
+                        <%if(i%2!=0){%>
+                            <td><input autocomplete="off" type="text"  name="doc" id="inp1" value="<%=hospital.docavail[i]%>" style="background-color: #f3f3f3;"></td>
+                        <%}%>
+                        
+                        </tr>
+                    <%}%>
+                </table>
+                <div  style="text-align: center; padding: 10px 0 20px 0;">
+                    <button class="btnn btnn1">Save Changes</button>
+                </div>
+                </form>
+          </div>
+        </div>
+
+    </div>
+</div>
+<div class="container"> 
+    <div class="row">
+        <div class="col-xl-6 col-lg-12" id="r2" >
+           <div class="container" id="gen-info" >
+                <p id="p1">Availability of blood <i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+                <form action="/dashboard/update/bloodavail"  method="POST">
+                    <input(type="hidden", name="_method", value="PUT")>
+                <table>
+                    <tr>
+                        <th>Blood Group</th>
+                        <th>Units</th>
+                        <th>Blood Group</th>
+                        <th>Units</th>
+                    </tr>
+                    <%for(let i=0;i<hospital.bloodavail1.length;i++){%>
+                     <tr>
+                        <%if(i==0){%>
+                            <td>
+                                A-
+                            </td>
+                            <td>
+                                <input autocomplete="off" type="number"   name="blood1" id="inp1" value="<%=hospital.bloodavail1[i]%>">
+                            </td>
+                            <td>
+                                A+
+                            </td>
+                            <td>
+                                <input autocomplete="off" type="number"  name="blood2" id="inp1" value="<%=hospital.bloodavail2[i]%>">
+                            </td>
+                        <%}%>
+                        <%if(i==1){%>
+                            <td>
+                                B-
+                            </td>
+                            <td>
+                                <input autocomplete="off" type="number"   name="blood1" id="inp1" value="<%=hospital.bloodavail1[i]%>">
+                            </td>
+                            <td>
+                                B+
+                            </td>
+                            <td>
+                                <input autocomplete="off" type="number"   name="blood2" id="inp1" value="<%=hospital.bloodavail2[i]%>">
+                            </td>
+                        <%}%>
+                        <%if(i==2){%>
+                            <td>
+                               O- 
+                            </td>
+                            <td>
+                                <input autocomplete="off" type="number"   name="blood1" id="inp1" value="<%=hospital.bloodavail1[i]%>">
+                            </td>
+                            <td>
+                                O+
+                            </td>
+                            <td>
+                                <input autocomplete="off" type="number"  name="blood2" id="inp1" value="<%=hospital.bloodavail2[i]%>">
+                            </td>
+                        <%}%>
+                        <%if(i==3){%>
+                            <td>
+                                AB-
+                            </td>
+                            <td>
+                                <input autocomplete="off" type="number"   name="blood1" id="inp1" value="<%=hospital.bloodavail1[i]%>">
+                            </td>
+                            <td>
+                                AB+
+                            </td>
+                            <td>
+                                <input autocomplete="off"  type="number"   name="blood2" id="inp1" value="<%=hospital.bloodavail2[i]%>">
+                            </td>
+                        <%}%>
+                     </tr>
+                    <%}%>
+                </table>
+                <div  style="text-align: center; padding: 10px 0 20px 0;">
+                    <button class="btnn btnn1">Save Changes</button>
+                </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-xl-6 col-lg-12" id="r2">
+            <div class="container" id="gen-info">
+                <p id="p1">Availability of beds <i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+                <form action="/dashboard/update/beds"  method="POST">
+                    <input(type="hidden", name="_method", value="PUT")>
+                <table>
+                    <tr>
+                        <th>Department</th>
+                        <th>Total Bed</th>
+                        <th>Available Bed</th>
+                    </tr>
+                    <%for(let i=0;i<hospital.bedavail1.length;i++){%>
+                        <tr>
+                            <td>
+                            <%if(i==0){%>
+                                ICU
+                            <%}%>
+                            <%if(i==1){%>
+                                General
+                            <%}%>
+                            <%if(i==2){%>
+                                Covid-19
+                            <%}%>
+                            </td>
+                            <%if(i%2==0){%>
+                                <td>
+                                <input type="number" autocomplete="off"  name="avail" id="inp1" value="<%=hospital.bedavail1[i]%>">
+                                </td>
+                                <td>
+                                <input type="number" autocomplete="off"  name="total" id="inp1" value="<%=hospital.bedavail2[i]%>">
+                                </td>
+                            <%}%>
+                            <%if(i%2!=0){%>
+                                <td>
+                                <input type="number" autocomplete="off"  name="avail" id="inp1" value="<%=hospital.bedavail1[i]%>" style="background-color: #f3f3f3;">
+                                </td>
+                                <td>
+                                <input type="number" autocomplete="off"  name="total" id="inp1" value="<%=hospital.bedavail2[i]%>" style="background-color: #f3f3f3;">
+                                </td>
+                            <%}%>
+                            
+                        </tr>
+                    <%}%>
+                </table>
+                <div  style="text-align: center; padding: 10px 0 20px 0;">
+                    <button class="btnn btnn1">Save Changes</button>
+                </div>
+                </form>
+          </div>
+        </div>
+    </div>
+</div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+
+<footer class="footer1" id="contact/to/us">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4">
+                <a href="/team" style="color: white;"><i class="fa fa-users" aria-hidden="true"></i> Visit us </a>
+               </div>
+               <div class="col-xl-4">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hackdoc18@gmail.com&su=SUBJECT&body=BODY" style="color: white;"><i class="fa fa-envelope" aria-hidden="false" style="color: white;"></i> Mail us for any query</a>
+               </div>
+               <div class="col-xl-4">
+                <a href="#terms&conditions" onclick="document.getElementById('modal-wrapper1').style.display='block'" style="color: white;">Terms &amp; Conditions</a>
+               </div>
+        </div>
+    </div>
+</footer>
+<footer class="footer2">
+    <div class="container">
+        <div class="row">
+            <div class=" col-xl-12">
+                Copyright © 2020 <a href="/team" style="text-decoration: none; color:red;">unknown_bits</a>
+             </div>
+        </div>
+    </div>
+ </footer>
+  <script src="/js/homepage.js"></script>
+
+</body>
+</html>

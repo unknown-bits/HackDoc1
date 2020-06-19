@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>HACKDOC | HOME</title>
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/css/home-style.css">
+    </head>
+    <body>
+        <div>
+            <nav class="navbar  navbar-default  navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="">
+                <img src="/images/hackdoc-logo.jpg" width="30" height="25"></a>
+                <a class="navbar-brand" id="lol" href="">Hack<b>DOC</b></a> 
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbarCollapse" class="navbar-collapse justify-content-start collapse in" aria-expanded="true">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item"><a href="#about" onclick="document.getElementById('modal-wrapper').style.display='block'" class="nav-link" id="node">About</a></li>
+                        <li class="nav-item"><a href="#contact/to/us" class="nav-link" id="node">Contact</a></li>
+                    </ul>
+
+<!-- ******************************search*************************************** -->
+
+                    
+                    
+                    <form action="/search" method="GET" class="navbar-form form-inline" id="sb1">
+                        <div class="input-group search-box">
+                            <input type="text" id="search" class="form-control" placeholder="Search hospital..." name="searchhos" autocomplete="off">
+                            <button id="search-button">Search</button>
+                            <!-- <a href=""><span class="input-group-addon"><i class="material-icons"></i></span></a> -->
+                        </div>
+                    </form>
+
+<!-- ********************************************************************* -->
+
+
+                    <ul class="nav navbar-nav navbar-right ml-auto">
+                        <li class="nav-item">
+                            <a  class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1" id="lop" href="/auth/login" aria-expanded="false" style="text-align: center">Login</a>
+                            <a  class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1" id="lop" href="/auth/signup" aria-expanded="false" style="text-align: center">Signup</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a href="#"  class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1" id="lop" aria-expanded="false">Sign up</a>
+                        </li> -->
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    <div id="modal-wrapper" class="modal">
+        <form class="modal-content animate" >
+            <h3 style="color: red;"> Who Are We</h3><br>
+            1. At Hackdoc, we believe there is a better way to have a connection between the Hospitals and Patients.<br> 
+            2. Generally, people lose their loved ones or their condition becomes serious just because of being unaware about the current scenario of hospitals.<br>
+            3. Using this app, they can know about the currently available facilities within the hospital, like availability of ventilators, beds, ICU wards etc.,  around their locality. <br>
+            4. On addition to this, people may also know about the symptoms and cure of the most common diseases. We are curious to help the society through our platform.<br>
+            <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+        </form>
+    </div>
+    <div id="modal-wrapper1" class="modal">
+        <form class="modal-content animate" id="m1">
+            <h3 style="color: red;"> Terms and Conditions:</h3>
+            <h4> Welcome to HackDoc!</h4>
+            By accessing this app we assume you accept these terms and conditions.<br>
+            Do not continue to use HackDoc if you do not agree to take all of the terms and conditions stated on this page.<br>
+            You may access HackDoc for your own personal use subjected to restrictions set in these terms and conditions.<br><br>
+            <h4> Hospital must:</h4>
+            ->Be govt. registered. <br>
+            ->Register themselves on our app by providing a valid proof.<br>
+            ->Provide the absolute information about him/herself as well as about the hospital and treatment.<br>
+            ->Update the provided information regulerly.<br><br>
+            <h4>Users should not:</h4>
+            ->Misuse the information from HackDoc.<br>
+            ->Reproduce, duplicate or copy material from HackDoc.<br><br>
+            <h4>Content Liability:</h4>
+            We shall not be hold responsible for any content that appears on the app, as it would be as per provided by the hospital's authorities.<br>
+            As it is related to health, We recommend you to verify the information provided from any of the reliable resource(may be a family doctor or someone else) before recommending to others and also using for their own.<br><br>
+            <h4>Disclaimer:</h4>
+            To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our app, and the use of this app. Nothing in this disclaimer would be:
+            <br>
+            ->responsible for your any personal injury;
+            <br>
+            ->responsible for fraud or fraudulent misrepresentation;
+            <br>
+            As long as the app and the information and services are provided free of charge, we will not be responsible for any loss or damage of any nature.
+            <br><br>
+            <span onclick="document.getElementById('modal-wrapper1').style.display='none'" class="close" title="Close PopUp">&times;</span>
+        </form>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="heading"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+
+        <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-12 " >
+            <div class="card" id="a1">
+                <p class="about-me" style="text-align: center; margin-top: 15px;"><b>Cardiovascular diseases</b> (CVDs) are a group of disorders of the heart and the blood vessels in our body.</p>
+                <button type="button" ><a style="text-decoration: none; color: white;" target="_blank" href="https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)" >Know More</a></button>
+            </div>
+        </div>
+
+        <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-12">
+            <div class="card" id="a2">
+                <p class="about-me" style="text-align: center; margin-top: 15px;"><b>Cancer</b> is a group of diseases involving abnormal cell growth with spread to other parts of the body.</p>
+                <button type="button" ><a style="text-decoration: none; color: white;" target="_blank" href="https://www.who.int/news-room/fact-sheets/detail/cancer" >Know More</a></button>
+            </div>
+        </div>
+        
+        <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-12">
+            <div class="card" id="a3">
+                <p class="about-me" style="text-align: center; margin-top: 15px;"><b>Alcoholic liver disease</b> is a result of overconsuming alcohol that damages the liver in our body and can be fatal.</p>
+                <button type="button" ><a style="text-decoration: none; color: white;" target="_blank" href="https://www.medicalnewstoday.com/articles/215638" >Know More</a></button>
+            </div>
+        </div>
+<!-- ************************************************************ -->
+            <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-12 " >
+                <div class="card" id="a1">
+                    <p class="about-me" style="text-align: center; margin-top: 15px;"><b>Appendicitis</b> is an inflammation of the appendix, a finger-shaped pouch that projects from your colon on the lower right side of your abdomen.</p>
+                    <button type="button" ><a style="text-decoration: none; color: white;" target="_blank" href="https://www.mayoclinic.org/diseases-conditions/appendicitis/symptoms-causes/syc-20369543#:~:text=Appendicitis%20is%20an%20inflammation%20of,the%20navel%20and%20then%20moves." >Know More</a></button>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                <div class="card" id="a2">
+                    <p class="about-me" style="text-align: center; margin-top: 15px;"><b>Asthma</b> is a condition in which your airways narrow and swell and may produce extra mucus. This can make breathing difficult and trigger coughing.</p>
+                    <button type="button" ><a style="text-decoration: none; color: white;" target="_blank" href="https://www.mayoclinic.org/diseases-conditions/asthma/symptoms-causes/syc-20369653#:~:text=Asthma%20is%20a%20condition%20in,asthma%20is%20a%20minor%20nuisance." >Know More</a></button>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                <div class="card" id="a3">
+                    <p class="about-me" style="text-align: center; margin-top: 15px;"><b>Low blood pressure</b> (hypotension) can cause dizziness and fainting. In severe cases, low blood pressure can be life-threatening.</p>
+                    <button type="button" ><a style="text-decoration: none; color: white;" target="_blank" href="https://www.mayoclinic.org/diseases-conditions/low-blood-pressure/symptoms-causes/syc-20355465#:~:text=In%20severe%20cases%2C%20low%20blood,generally%20considered%20low%20blood%20pressure." >Know More</a></button>
+                </div>
+            </div>
+<!-- ************************************************************* -->
+            <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-12 " >
+                <div class="card" id="a1">
+                    <p class="about-me" style="text-align: center; margin-top: 15px;"><b>Chikungunya</b> virus is spread to people by the bite of an infected mosquito. The most common symptoms of infection are fever and joint pain.</p>
+                    <button type="button" ><a style="text-decoration: none; color: white;" target="_blank" href="https://www.cdc.gov/chikungunya/index.html" >Know More</a></button>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                <div class="card" id="a2">
+                    <p class="about-me" style="text-align: center; margin-top: 15px;"><b>Coronary Heart Disease</b> develops when coronary arteries become too narrow which are blood vessels that supply oxygen to the heart.</p>
+                    <button type="button" ><a style="text-decoration: none; color: white;" target="_blank" href="https://www.medicalnewstoday.com/articles/184130" >Know More</a></button>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                <div class="card" id="a3">
+                    <p class="about-me" style="text-align: center; margin-top: 15px;"><b>Coronavirus disease</b> (COVID-19) is an infectious disease caused by coronavirus. Most people infected with this will experience respiratory illness.</p>
+                    <button type="button" ><a style="text-decoration: none; color: white;" target="_blank" href="https://www.who.int/health-topics/coronavirus#tab=tab_1" >Know More</a></button>
+                </div>
+            </div>
+<!-- ************************************************************* -->
+            <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-12 " >
+                <div class="card" id="a1">
+                    <p class="about-me" style="text-align: center; margin-top: 15px;"><b>Diabetes</b> is a number of diseases that involve problems with the hormone insulin. The pancreas releases insulin to help your body store and use sugar and fat from food.</p>
+                    <button type="button" ><a style="text-decoration: none; color: white;" target="_blank" href="https://www.webmd.com/diabetes/default.htm" >Know More</a></button>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                <div class="card" id="a2">
+                    <p class="about-me" style="text-align: center; margin-top: 15px;"><b>Migraine</b> is a powerful headache that often happens with nausea, vomiting, and sensitivity to light. Migraines can last from 4 hours to 3 days, and sometimes longer.</p>
+                    <button type="button" ><a style="text-decoration: none; color: white;" target="_blank" href="https://www.webmd.com/migraines-headaches/migraines-headaches-migraines#:~:text=A%20migraine%20is%20a%20powerful,times%20more%20often%20than%20men." >Know More</a></button>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                <div class="card" id="a3">
+                    <p class="about-me" style="text-align: center; margin-top: 15px;"><b>Heart attack</b> is the death of a segment of heart muscle caused by a loss of blood supply which cuts off when an artery supplying the heart muscle is blocked by blood clot.</p>
+                    <button type="button" ><a style="text-decoration: none; color: white;" target="_blank" href="https://www.medicalnewstoday.com/articles/151444#:~:text=A%20heart%20attack%20is%20the,of%20the%20heart%20muscle%20tissue." >Know More</a></button>
+                </div>
+            </div>
+<!-- ********************************************************** -->
+            <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-12 " >
+                <div class="card" id="a1">
+                    <p class="about-me" style="text-align: center; margin-top: 15px;"><b>High blood pressure</b> occurs when blood pressure increases. Blood pressure measurement is based on how much blood is passing through your blood vessels and resistance blood meets when heart pumps.</p>
+                    <button type="button" ><a style="text-decoration: none; color: white;" target="_blank" href="https://www.healthline.com/health/high-blood-pressure-hypertension#overview" >Know More</a></button>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                <div class="card" id="a2">
+                    <p class="about-me" style="text-align: center; margin-top: 15px;"><b>Kidney stones</b> are small "pebbles" of salt and mineral in the urine. The most common symptom is severe pain. Most stones pass on their own, but medical procedures are used to remove some kidney stones.</p>
+                    <button type="button" ><a style="text-decoration: none; color: white;" target="_blank" href="https://www.webmd.com/kidney-stones/default.htm" >Know More</a></button>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                <div class="card" id="a3">
+                    <p class="about-me" style="text-align: center; margin-top: 15px;"><b>Eosinophilia</b> refers to a condition of having an increased numbers of eosinophils in the peripheral blood. White blood cells are an essential component of the cellular immune system.</p>
+                    <button type="button" ><a style="text-decoration: none; color: white;" target="_blank" href="https://my.clevelandclinic.org/health/diseases/17710-eosinophilia#:~:text=Eosinophilia%20refers%20to%20a%20condition,of%20the%20cellular%20immune%20system." >Know More</a></button>
+                </div>
+            </div>
+<!-- ************************************************************* -->
+    </div>
+</div>
+<br> <br>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+<footer class="footer1" id="contact/to/us">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4">
+                <a href="/team" style="color: white;"><i class="fa fa-users" aria-hidden="true"></i> Visit us </a>
+               </div>
+               <div class="col-xl-4">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hackdoc18@gmail.com&su=SUBJECT&body=BODY" style="color: white;"><i class="fa fa-envelope" aria-hidden="false" style="color: white;"></i> Mail us for any query</a>
+               </div>
+               <div class="col-xl-4">
+                <a href="#terms&conditions" onclick="document.getElementById('modal-wrapper1').style.display='block'" style="color: white;">Terms &amp; Conditions</a>
+               </div>
+        </div>
+    </div>
+</footer>
+<footer class="footer2">
+    <div class="container">
+        <div class="row">
+            <div class=" col-xl-12">
+                Copyright © 2020 <a href="/team" style="text-decoration: none; color:red;">unknown_bits</a>
+             </div>
+        </div>
+    </div>
+ </footer>
+  <script src="/js/homepage.js"></script>
+
+</body>
+</html>
