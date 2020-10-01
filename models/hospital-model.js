@@ -8,10 +8,10 @@ const hospitalSchema = new Schema({
     address:{ type:String, default:"iamaddress" , uppercase:true},
     contact1:{ type:String, default:"0000000000" ,minlength:10},
     contact2:{ type:String, default:"0000000000"},
-    facility:{type:Array, default: ["No","No","No","No","No"]},
+    facility:{type:booleanArray, default: [0,0,0,0,0]},
     bedavail1:{type:Array, default: [0,0,0]},
     bedavail2:{type:Array, default: [0,0,0]},
-    docavail:{type:Array, default: ["No","No","No","No","No"]},
+    docavail:{type:booleanArray, default:  [0,0,0,0,0]},
     bloodavail1:{type:Array, default: [0,0,0,0]},
     bloodavail2:{type:Array, default: [0,0,0,0]}
 });
